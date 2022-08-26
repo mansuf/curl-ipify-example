@@ -5,6 +5,7 @@ An example how to use [libcurl](https://curl.se/libcurl/) &amp; [nlohmann-json](
 ## Prerequisites
 
 - [CMake](https://cmake.org/) v3.2
+- [vcpkg](https://github.com/microsoft/vcpkg) for cpp package manager
 - [nlohmann-json](https://github.com/nlohmann/json) library for parsing and dumping JSON data
 - [libcurl](https://curl.se/libcurl/) library for HTTP(s) request
 
@@ -16,17 +17,10 @@ git clone https://github.com/mansuf/curl-ipify-example.git
 cd curl-ipify-example
 
 # Build the app
-cmake "."
+cmake -DCMAKE_TOOLCHAIN_FILE:STRING={PATH_TO_vcpkg.cmake} -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -S. -B./build
 cmake --build "./build"
 
 # Run the app
 cd "./build/Release"
 curl_ipify.exe
 ```
-
-## My tools during development 
-
-- [CMake](https://cmake.org/) v3.2, build automation
-- [vcpkg](https://github.com/microsoft/vcpkg), Package manager
-- [vscode](https://github.com/microsoft/vscode), Code editor
-- [Windows Terminal](https://github.com/microsoft/terminal), Command prompt / terminal
