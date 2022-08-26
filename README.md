@@ -16,6 +16,7 @@ git clone https://github.com/mansuf/curl-ipify-example.git
 cd curl-ipify-example
 
 # Build the app
+cmake "."
 cmake --build "./build"
 
 # Run the app
