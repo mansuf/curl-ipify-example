@@ -16,6 +16,10 @@ An example how to use [libcurl](https://curl.se/libcurl/) &amp; [nlohmann-json](
 git clone https://github.com/mansuf/curl-ipify-example.git
 cd curl-ipify-example
 
+# Install the required packages
+vcpkg install nlohmann-json
+vcpkg install curl
+
 # Build the app
 # Replace {PATH_TO_vcpkg} to your vcpkg cmake script
 # Example: vcpkg root directory is stored in /etc/vcpkg, so the {PATH_TO_vcpkg}
