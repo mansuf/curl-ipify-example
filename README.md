@@ -17,6 +17,9 @@ git clone https://github.com/mansuf/curl-ipify-example.git
 cd curl-ipify-example
 
 # Build the app
+# Replace {PATH_TO_vcpkg} to your vcpkg cmake script
+# Example: vcpkg root directory is stored in /etc/vcpkg, so the {PATH_TO_vcpkg}
+# would be /etc/vcpkg/scripts/buildsystems/vcpkg.cmake
 cmake -DCMAKE_TOOLCHAIN_FILE:STRING={PATH_TO_vcpkg.cmake} -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -S. -B./build
 cmake --build "./build"
 
