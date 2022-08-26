@@ -28,4 +28,4 @@ curl_ipify.exe
 - [CMake](https://cmake.org/) v3.2, build automation
 - [vcpkg](https://github.com/microsoft/vcpkg), Package manager
 - [vscode](https://github.com/microsoft/vscode), Code editor
-- [Windows Terminal](https://github.com/microsoft/terminal)
+- [Windows Terminal](https://github.com/microsoft/terminal), Command prompt / terminal
