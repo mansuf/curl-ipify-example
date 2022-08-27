@@ -11,7 +11,7 @@ using json = nlohmann::json;
 static std::string data;
 static char errdata[CURL_ERROR_SIZE];
 
-static int curl_ipify_writer(char *data, size_t size, size_t nmemb, std::string *writer_data) {
+static size_t curl_ipify_writer(char *data, size_t size, size_t nmemb, std::string *writer_data) {
     if (writer_data == NULL) {
         return 0;
     }
@@ -37,7 +37,7 @@ bool curl_ipify_init(CURL *&conn) {
         return false;
     }
     
-    code = curl_easy_setopt(conn, CURLOPT_URL, "http://api.ipify.org/?format=json");
+    code = curl_easy_setopt(conn, CURLOPT_URL, "https://api.ipify.org/?format=json");
     if(code != CURLE_OK) {
         fprintf(stderr, "Failed to set URL [%s]\n", errdata);
         return false;
@@ -60,7 +60,7 @@ bool curl_ipify_init(CURL *&conn) {
         fprintf(stderr, "Failed to set write data [%s]\n", errdata);
         return false;
     }
-    
+
     return true;
 }
 
